@@ -119,7 +119,7 @@ img { display: block; }
   text-align: center; overflow: hidden; background: var(--bg-page);
 }
 .hero-kilim {
-  position: absolute; top: 70px; height: 52%; opacity: 0.92;
+  position: absolute; top: 70px; height: 52%; max-height: 520px; opacity: 0.92;
   -webkit-mask-image: linear-gradient(to bottom, transparent, #000 12%, #000 88%, transparent),
                       linear-gradient(to right, transparent, #000 22%, #000 80%, transparent);
   -webkit-mask-composite: source-in;
@@ -130,7 +130,7 @@ img { display: block; }
 .hero-kilim.l { left: 0; }
 .hero-kilim.r { right: 0; transform: scaleX(-1); }
 .hero-botan {
-  position: absolute; bottom: -20px; height: 46%;
+  position: absolute; bottom: -20px; height: 46%; max-height: 440px; max-width: 40%; object-fit: contain;
   -webkit-mask-image: radial-gradient(110% 90% at 40% 50%, #000 62%, transparent);
   mask-image: radial-gradient(110% 90% at 40% 50%, #000 62%, transparent);
 }
@@ -139,6 +139,10 @@ img { display: block; }
 .hero-inner {
   position: relative; z-index: 2; padding: 40px 20px;
   display: flex; flex-direction: column; align-items: center;
+  /* Soft paper halo — same colour as the page, so it's invisible on flat
+     cream but mutes any kilim/botanical art that sits behind the text. */
+  background: radial-gradient(58% 56% at 50% 47%,
+    var(--bg-page) 0%, rgba(248, 243, 233, 0.86) 42%, rgba(248, 243, 233, 0) 76%);
 }
 .hero-name {
   font-family: var(--font-display); font-weight: 500;
@@ -198,6 +202,11 @@ img { display: block; }
   aspect-ratio: 4 / 5; display: flex; align-items: flex-end; justify-content: center;
 }
 .story-portrait img { width: 128%; position: absolute; top: 8%; }
+.story-portrait::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 45%; z-index: 1;
+  background: linear-gradient(to top, rgba(242, 232, 223, 0.92), rgba(242, 232, 223, 0));
+  pointer-events: none;
+}
 .story-portrait-cap {
   position: relative; z-index: 2; padding: 18px;
   display: flex; flex-direction: column; align-items: center; gap: 6px;
@@ -377,6 +386,19 @@ select.field-input { appearance: none; color: var(--text-primary); cursor: point
   .details-cols { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: repeat(2, 1fr); }
   .rsvp-two { grid-template-columns: 1fr; }
+  /* Decorations recede so they never crowd the text on narrow screens. */
+  .hero-kilim { height: 34%; opacity: 0.5; }
+  .hero-botan { height: 30%; max-width: 32%; opacity: 0.7; }
+}
+@media (max-width: 560px) {
+  /* Nav: drop the brand mark, shrink + center the links so they fit. */
+  .nav { padding: 0 16px; }
+  .nav-brand { display: none; }
+  .nav-links { gap: 14px; width: 100%; justify-content: center; }
+  .nav-link { font-size: 11px; letter-spacing: 0.08em; }
+  /* CTAs stack full-width instead of overflowing. */
+  .hero-cta { flex-direction: column; width: 100%; max-width: 320px; }
+  .hero-cta .btn { width: 100%; padding: 15px 24px; }
 }
 @media (max-width: 480px) {
   .detail-tiles { grid-template-columns: 1fr; gap: 22px; }
