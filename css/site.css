@@ -396,6 +396,14 @@ select.field-input { appearance: none; color: var(--text-primary); cursor: point
   .nav-brand { display: none; }
   .nav-links { gap: 14px; width: 100%; justify-content: center; }
   .nav-link { font-size: 11px; letter-spacing: 0.08em; }
+  /* Keep the hero column within the screen so nothing drags off-edge. */
+  .hero-inner { padding: 32px 14px; max-width: 100%; }
+  /* Countdown shrinks to fit four cells across a phone. */
+  .countdown { gap: 9px; }
+  .countdown-cell { min-width: 0; }
+  .countdown-num { font-size: 1.95rem; }
+  .countdown-lab { font-size: 9px; letter-spacing: 0.12em; }
+  .countdown-sep { margin-top: 14px; }
   /* CTAs stack full-width instead of overflowing. */
   .hero-cta { flex-direction: column; width: 100%; max-width: 320px; }
   .hero-cta .btn { width: 100%; padding: 15px 24px; }
