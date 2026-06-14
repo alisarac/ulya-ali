@@ -1,0 +1,80 @@
+/* ── Otağ · Colors ──────────────────────────────────────────────
+   Sampled from the davetiye reference: warm paper, terracotta,
+   deep olive, sage leaf, camel. Base ramps first, semantic aliases
+   below. Always reach for the semantic names in components.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* Paper / cream */
+  --cream-50:  #F8F3E9;  /* page */
+  --cream-100: #F3EBDC;  /* alt page / card */
+  --cream-200: #EADDC7;  /* parchment surface */
+  --cream-300: #DFCEB0;  /* soft border on cream */
+  --sand-400:  #D5BE99;  /* deeper sand */
+
+  /* Clay · terracotta (primary) */
+  --clay-200: #E6B98E;
+  --clay-300: #D89A6B;  /* camel / tan */
+  --clay-400: #C67C4B;
+  --clay-500: #B0532C;  /* PRIMARY terracotta */
+  --clay-600: #97431F;  /* burnt sienna */
+  --clay-700: #7C3617;  /* press */
+
+  /* Olive · sage (secondary) */
+  --olive-700: #4C4D37;  /* deep olive — name ink */
+  --olive-600: #5D5E43;
+  --olive-500: #747552;
+  --olive-400: #8C8C64;
+  --sage-300:  #9DA384;  /* leaf green */
+  --sage-200:  #B7BBA1;
+  --sage-100:  #D2D4C2;
+
+  /* Ink (warm olive-charcoal) */
+  --ink-900: #393A2A;  /* primary text */
+  --ink-700: #54533F;
+  --ink-500: #7B7561;  /* muted */
+  --ink-300: #A69E89;  /* faint / placeholder */
+
+  /* Utility */
+  --white:    #FFFFFF;
+  --gold-400: #C39A5E;  /* subtle gilt accent in scenes */
+  --black:    #211F17;
+
+  /* ── Semantic aliases ── */
+  --bg-page:          var(--cream-50);
+  --bg-page-alt:      var(--cream-100);
+  --bg-ornament:      #FBF6EC;   /* lightest, for framed panels */
+  --surface-card:     var(--cream-100);
+  --surface-raised:   #FBF6EC;
+  --surface-parchment:var(--cream-200);
+  --surface-ink:      var(--olive-700);  /* dark sections */
+
+  --border-soft:   var(--cream-300);
+  --border-line:   #D8C4A4;
+  --border-strong: var(--clay-300);
+  --rule:          var(--clay-500);      /* hairline rules / dividers */
+
+  --text-primary:   var(--ink-900);
+  --text-secondary: var(--ink-700);
+  --text-muted:     var(--ink-500);
+  --text-faint:     var(--ink-300);
+  --text-on-clay:   #FBF3E6;
+  --text-on-olive:  #EDE7D2;
+
+  --accent:        var(--clay-500);
+  --accent-hover:  var(--clay-600);
+  --accent-press:  var(--clay-700);
+  --accent-tint:   rgba(176, 83, 44, 0.10);
+  --accent-tint-2: rgba(176, 83, 44, 0.18);
+
+  --secondary:      var(--olive-700);
+  --secondary-hover:var(--olive-600);
+  --secondary-tint: rgba(76, 77, 55, 0.10);
+
+  --leaf:    var(--sage-300);
+  --focus-ring: rgba(176, 83, 44, 0.38);
+
+  /* status (kept warm to stay on-brand) */
+  --success: #5D6B3E;
+  --error:   #A23A26;
+  --info:    var(--olive-600);
+}

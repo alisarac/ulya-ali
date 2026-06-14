@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ulya & Ali — Davetiye</title>
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+  html, body { margin: 0; background: #E7DCC8; }
+  .stage {
+    min-height: 100vh; display: flex; align-items: flex-start; justify-content: center;
+    padding: 40px 20px; box-sizing: border-box;
+  }
+  .card {
+    position: relative;
+    width: 780px; max-width: 100%;
+    background: #F2E8DF;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+  }
+  /* Side + top frame (open at bottom — the band's arc closes it) */
+  .frame, .frame-inner { position: absolute; pointer-events: none; z-index: 6; }
+  .frame { inset: 16px; bottom: 0; border: 1.5px solid var(--clay-500); border-bottom: none; }
+  .frame-inner { inset: 22px; bottom: 0; border: 1px solid var(--clay-300); border-bottom: none; }
+  .corner { position: absolute; top: 11px; width: 11px; height: 11px; transform: rotate(45deg);
+            background: #F2E8DF; border: 1.5px solid var(--clay-500); z-index: 7; }
+  .corner.tl { left: 11px; } .corner.tr { right: 11px; }
+
+  /* Side ornament: kilim (upper) → botanical (lower), feathered on every edge */
+  .kilim { position: absolute; top: 34px; height: 40%; z-index: 2;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 90%, transparent), linear-gradient(to right, transparent, #000 26%, #000 78%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to bottom, transparent, #000 8%, #000 90%, transparent), linear-gradient(to right, transparent, #000 26%, #000 78%, transparent);
+    mask-composite: intersect; }
+  .kilim.l { left: 30px; } .kilim.r { right: 30px; transform: scaleX(-1); }
+  .botan { position: absolute; bottom: 150px; height: 42%; z-index: 2;
+    -webkit-mask-image: radial-gradient(105% 82% at 46% 52%, #000 60%, transparent 100%);
+    mask-image: radial-gradient(105% 82% at 46% 52%, #000 60%, transparent 100%); }
+  .botan.l { left: 2px; } .botan.r { right: 2px; transform: scaleX(-1); }
+
+  /* Continuous bottom band — arc frame + panorama + medallion + sign-offs */
+  .band { display: block; width: 100%; margin-top: 16px; position: relative; z-index: 3;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 9%);
+    mask-image: linear-gradient(to bottom, transparent, #000 9%); }
+
+  /* Content */
+  .content {
+    position: relative; z-index: 5;
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+    padding: 54px 116px 0; box-sizing: border-box;
+  }
+  .eyebrow {
+    font-family: var(--font-label); font-weight: 500;
+    font-size: 14px; letter-spacing: .2em; text-transform: uppercase;
+    color: var(--olive-700); line-height: 1.65; margin: 0;
+  }
+  .intro {
+    font-family: var(--font-body); font-style: italic; font-size: 17.5px;
+    color: var(--text-secondary); line-height: 1.5; margin: 14px 0 0; max-width: 380px;
+  }
+  .med { width: 122px; height: auto; margin: 16px 0 8px; }
+  .name { font-family: var(--font-display); font-weight: 500; font-size: 60px;
+          letter-spacing: .26em; color: var(--olive-700); line-height: 1.02; margin: 0 0 0 .26em; }
+  .ve { font-family: var(--font-script); font-size: 33px; color: var(--clay-500); line-height: 1; margin: 1px 0; position: relative; }
+  .ve::before, .ve::after { content: ""; position: absolute; top: 52%; width: 46px; height: 1px; background: var(--clay-400); }
+  .ve::before { right: 100%; margin-right: 14px; } .ve::after { left: 100%; margin-left: 14px; }
+  .tulip { width: 44px; height: auto; margin: 18px 0 16px; }
+
+  .details { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0; width: 100%; max-width: 430px; }
+  .det { padding: 0 14px; display: flex; flex-direction: column; align-items: center; gap: 7px; }
+  .det + .det { border-left: 1px solid var(--clay-300); }
+  .det svg { width: 25px; height: 25px; color: var(--clay-500); }
+  .det .big { font-family: var(--font-display); font-size: 29px; font-weight: 500; color: var(--olive-700); line-height: 1; }
+  .det .lab { font-family: var(--font-label); font-size: 11px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--clay-600); }
+  .det .sub { font-family: var(--font-label); font-size: 10.5px; letter-spacing: .04em; color: var(--text-muted); line-height: 1.45; }
+
+  .rule { width: 240px; height: auto; margin: 22px 0 16px; }
+  .closing { font-family: var(--font-body); font-style: italic; font-size: 16.5px; color: var(--text-secondary); line-height: 1.55; margin: 0; max-width: 430px; }
+  .closing strong { font-family: var(--font-label); font-style: normal; font-weight: 500; font-size: 14px; letter-spacing: .16em; text-transform: uppercase; color: var(--olive-700); display: block; margin-top: 7px; }
+
+  @media (max-width: 560px) {
+    .content { padding: 40px 40px 0; }
+    .name { font-size: 44px; }
+    .kilim.l { left: 12px; } .kilim.r { right: 12px; }
+  }
+
+  @media print {
+    html, body { background: #fff; }
+    .stage { padding: 0; min-height: auto; }
+    .card { box-shadow: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="card">
+    <span class="frame"></span><span class="frame-inner"></span>
+    <span class="corner tl"></span><span class="corner tr"></span>
+
+    <img class="kilim l" src="assets/kilim-left.png" alt="" />
+    <img class="kilim r" src="assets/kilim-left.png" alt="" />
+    <img class="botan l" src="assets/botanical-left.png" alt="" />
+    <img class="botan r" src="assets/botanical-left.png" alt="" />
+
+    <div class="content">
+      <p class="eyebrow">Birbirimizi Bulduk,<br/>Ailelerimizle Bütünlendik.</p>
+      <p class="intro">Bu özel günümüzde sizleri de aramızda görmekten mutluluk duyarız.</p>
+      <img class="med" src="assets/divider.png" alt="" />
+      <h1 class="name">ULYA</h1>
+      <span class="ve">ve</span>
+      <h1 class="name">ALİ</h1>
+      <img class="tulip" src="assets/tulip.png" alt="" />
+
+      <div class="details">
+        <div class="det">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          <span class="big">25</span><span class="lab">Temmuz</span><span class="sub">2026<br/>Cumartesi</span>
+        </div>
+        <div class="det">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <span class="big">19.00</span><span class="lab">Nikah & Davet</span>
+        </div>
+        <div class="det">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span class="lab" style="font-size:13px">Güzelcehisar<br/>Garden</span><span class="sub">Otağtepe, Kavacık<br/>İstanbul</span>
+        </div>
+      </div>
+
+      <img class="rule" src="assets/divider.png" alt="" />
+      <p class="closing">Değerli misafirlerimizin konforunu düşünerek, bu özel günümüzde çocuklarımıza <strong>İyi Geceler Dileriz.</strong></p>
+    </div>
+
+    <img class="band" src="assets/bottom-band.png" alt="" />
+  </div>
+</div>
+</body>
+</html>

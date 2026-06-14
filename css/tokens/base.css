@@ -1,0 +1,53 @@
+/* ── Otağ · Base ────────────────────────────────────────────────
+   Minimal element defaults so consumers get sane paper + ink out of
+   the box. Components style themselves; this just sets the stage.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-page);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent-tint-2);
+  color: var(--clay-700);
+}
+
+/* Headings default to the display serif */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-weight: var(--weight-medium);
+  line-height: var(--leading-tight);
+  margin: 0;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-hover); }
+
+/* Shared helper: tracked uppercase label (eyebrow) */
+.otag-eyebrow {
+  font-family: var(--font-label);
+  font-size: var(--text-label);
+  font-weight: var(--weight-medium);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+/* Shared helper: cursive script accent */
+.otag-script {
+  font-family: var(--font-script);
+  font-weight: 400;
+  color: var(--accent);
+  line-height: 1;
+}

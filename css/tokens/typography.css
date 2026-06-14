@@ -1,0 +1,46 @@
+/* ── Otağ · Typography ──────────────────────────────────────────
+   High-contrast serif display + cursive script accent + geometric
+   sans for tracked labels. The reference's signature move is the
+   widely-letterspaced serif name (U L Y A) — see --tracking-display.
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* Families */
+  --font-display: 'Cormorant Garamond', 'PT Serif', Georgia, serif;
+  --font-serif:   'Cormorant Garamond', 'PT Serif', Georgia, serif;
+  --font-script:  'Pinyon Script', 'Cormorant Garamond', cursive;
+  --font-label:   'Jost', 'Golos Text', system-ui, sans-serif;
+  --font-body:    'Cormorant Garamond', 'PT Serif', Georgia, serif;
+  --font-ui:      'Jost', 'Golos Text', system-ui, sans-serif;
+
+  /* Type scale */
+  --text-hero:    clamp(3.25rem, 9vw, 7rem);   /* couple names */
+  --text-display: clamp(2.4rem, 5.5vw, 4.25rem);
+  --text-h1:      clamp(2rem, 3.5vw, 2.875rem);
+  --text-h2:      clamp(1.6rem, 2.6vw, 2.125rem);
+  --text-h3:      1.5rem;
+  --text-lg:      1.3125rem;
+  --text-body:    1.125rem;
+  --text-sm:      1rem;
+  --text-label:   0.8125rem;   /* tracked uppercase eyebrow/label */
+  --text-xs:      0.6875rem;
+
+  /* Tracking */
+  --tracking-display: 0.30em;  /* U L Y A — spaced serif names */
+  --tracking-label:   0.24em;  /* uppercase sans labels */
+  --tracking-wide:    0.08em;
+  --tracking-snug:    0.02em;
+  --tracking-normal:  0;
+
+  /* Leading */
+  --leading-tight: 1.08;
+  --leading-snug:  1.28;
+  --leading-body:  1.62;
+  --leading-loose: 1.8;
+
+  /* Weights */
+  --weight-light:    300;
+  --weight-regular:  400;
+  --weight-medium:   500;
+  --weight-semibold: 600;
+  --weight-bold:     700;
+}
