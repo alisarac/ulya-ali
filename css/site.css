@@ -130,7 +130,7 @@ img { display: block; }
 .hero-kilim.l { left: 0; }
 .hero-kilim.r { right: 0; transform: scaleX(-1); }
 .hero-botan {
-  position: absolute; bottom: -20px; height: 46%; max-height: 440px; max-width: 40%; object-fit: contain;
+  position: absolute; bottom: -20px; height: 46%; max-height: 440px; width: auto;
   -webkit-mask-image: radial-gradient(110% 90% at 40% 50%, #000 62%, transparent);
   mask-image: radial-gradient(110% 90% at 40% 50%, #000 62%, transparent);
 }
@@ -400,7 +400,7 @@ textarea.field-input { resize: vertical; }
   .rsvp-two { grid-template-columns: 1fr; }
   /* Decorations recede so they never crowd the text on narrow screens. */
   .hero-kilim { height: 34%; opacity: 0.5; }
-  .hero-botan { height: 30%; max-width: 32%; opacity: 0.7; }
+  .hero-botan { height: 26%; width: auto; opacity: 0.6; }
 }
 @media (max-width: 560px) {
   /* Nav: drop the brand mark, shrink + center the links so they fit. */
