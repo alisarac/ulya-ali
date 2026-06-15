@@ -130,9 +130,9 @@ img { display: block; }
 .hero-kilim.l { left: 0; }
 .hero-kilim.r { right: 0; transform: scaleX(-1); }
 .hero-botan {
-  position: absolute; bottom: -20px; height: 46%; max-height: 440px; width: auto;
-  -webkit-mask-image: radial-gradient(110% 90% at 40% 50%, #000 62%, transparent);
-  mask-image: radial-gradient(110% 90% at 40% 50%, #000 62%, transparent);
+  position: absolute; bottom: -40px; height: 74%; max-height: 700px; width: auto; opacity: 0.4;
+  -webkit-mask-image: radial-gradient(120% 100% at 38% 58%, #000 38%, transparent 80%);
+  mask-image: radial-gradient(120% 100% at 38% 58%, #000 38%, transparent 80%);
 }
 .hero-botan.l { left: -10px; }
 .hero-botan.r { right: -10px; transform: scaleX(-1); }
@@ -399,7 +399,7 @@ textarea.field-input { resize: vertical; }
   .rsvp-two { grid-template-columns: 1fr; }
   /* Decorations recede so they never crowd the text on narrow screens. */
   .hero-kilim { height: 34%; opacity: 0.5; }
-  .hero-botan { height: 26%; width: auto; opacity: 0.6; }
+  .hero-botan { height: 46%; width: auto; opacity: 0.28; }
 }
 @media (max-width: 560px) {
   /* Nav: drop the brand mark, shrink + center the links so they fit. */
