@@ -15,10 +15,12 @@
      card on desktop; real clamp() type so it reads on a phone. */
   .inv {
     position: relative; overflow: hidden;
-    width: 100%; max-width: 600px; margin: clamp(0px, 4vw, 32px) auto;
+    width: 100%; max-width: 600px; margin: 0 auto;
     background: #F2E8DF; box-shadow: var(--shadow-lg);
     display: flex; flex-direction: column;
   }
+  /* Full-bleed on phones; small inset card on larger screens */
+  @media (min-width: 640px) { .inv { margin: 28px auto; } }
 
   /* Side kilim + lower botanicals, feathered */
   .inv-kilim {
