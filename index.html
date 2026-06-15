@@ -18,8 +18,8 @@
       </span>
     </button>
     <div class="nav-links">
-      <button class="nav-link" data-scroll="story">Hikâyemiz</button>
       <button class="nav-link" data-scroll="details">Detaylar</button>
+      <button class="nav-link" data-scroll="story">Hikâyemiz</button>
       <button class="nav-link" data-scroll="gallery">Anılarımız</button>
       <button class="nav-link nav-link--accent" data-scroll="rsvp">LCV</button>
     </div>
@@ -71,52 +71,8 @@
     </div>
   </header>
 
-  <!-- ── Story ───────────────────────────────────────── -->
-  <section id="story" class="section section--alt">
-    <div class="container">
-      <div class="section-head">
-        <div class="script sh-script">bizim</div>
-        <div class="eyebrow sh-eyebrow">Hikâyemiz</div>
-        <h2 class="sh-title">Nasıl Tanıştık</h2>
-        <div class="sh-divider">
-          <div class="kilim-divider" role="separator" style="width:210px">
-            <span class="kd-dot"></span><span class="kd-line"></span>
-            <span class="kd-med"><span class="kd-d-sm"></span><span class="kd-ring"><span class="kd-ring-outer"></span><span class="kd-ring-inner"></span></span><span class="kd-d-sm"></span></span>
-            <span class="kd-line"></span><span class="kd-dot"></span>
-          </div>
-        </div>
-      </div>
-
-      <div class="story-grid">
-        <div class="story-portrait">
-          <img src="assets/scene-coast.png" alt="" aria-hidden="true" />
-          <div class="story-portrait-cap">
-            <span class="monogram" style="font-size:34px">
-              <span class="mono-initial">U</span><span class="mono-connector">ve</span><span class="mono-initial">A</span>
-            </span>
-            <span class="cap-place">İstanbul · 2026</span>
-          </div>
-        </div>
-        <div class="story-list">
-          <div class="milestone">
-            <div class="ms-year">2021</div>
-            <div><div class="ms-title">Tanıştık</div><div class="ms-desc">Bir bahar akşamı, ortak dostlarımızın bir davetinde.</div></div>
-          </div>
-          <div class="milestone">
-            <div class="ms-year">2024</div>
-            <div><div class="ms-title">Nişanlandık</div><div class="ms-desc">Ailelerimizle, sevdiklerimizin arasında söz kestik.</div></div>
-          </div>
-          <div class="milestone">
-            <div class="ms-year">2026</div>
-            <div><div class="ms-title">Evleniyoruz</div><div class="ms-desc">Ve sizleri bu mutluluğa ortak olmaya davet ediyoruz.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- ── Details ─────────────────────────────────────── -->
-  <section id="details" class="section section--page">
+  <section id="details" class="section section--alt">
     <div class="container">
       <div class="section-head">
         <div class="eyebrow sh-eyebrow">Düğün Detayları</div>
@@ -188,6 +144,50 @@
             Haritada Aç
             <span class="btn-icon icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
           </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Story ───────────────────────────────────────── -->
+  <section id="story" class="section section--page">
+    <div class="container">
+      <div class="section-head">
+        <div class="script sh-script">bizim</div>
+        <div class="eyebrow sh-eyebrow">Hikâyemiz</div>
+        <h2 class="sh-title">Nasıl Tanıştık</h2>
+        <div class="sh-divider">
+          <div class="kilim-divider" role="separator" style="width:210px">
+            <span class="kd-dot"></span><span class="kd-line"></span>
+            <span class="kd-med"><span class="kd-d-sm"></span><span class="kd-ring"><span class="kd-ring-outer"></span><span class="kd-ring-inner"></span></span><span class="kd-d-sm"></span></span>
+            <span class="kd-line"></span><span class="kd-dot"></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-grid">
+        <div class="story-portrait">
+          <img src="assets/scene-coast.png" alt="" aria-hidden="true" />
+          <div class="story-portrait-cap">
+            <span class="monogram" style="font-size:34px">
+              <span class="mono-initial">U</span><span class="mono-connector">ve</span><span class="mono-initial">A</span>
+            </span>
+            <span class="cap-place">İstanbul · 2026</span>
+          </div>
+        </div>
+        <div class="story-list">
+          <div class="milestone">
+            <div class="ms-year">2021</div>
+            <div><div class="ms-title">Tanıştık</div><div class="ms-desc">Bir bahar akşamı, ortak dostlarımızın bir davetinde.</div></div>
+          </div>
+          <div class="milestone">
+            <div class="ms-year">2024</div>
+            <div><div class="ms-title">Nişanlandık</div><div class="ms-desc">Ailelerimizle, sevdiklerimizin arasında söz kestik.</div></div>
+          </div>
+          <div class="milestone">
+            <div class="ms-year">2026</div>
+            <div><div class="ms-title">Evleniyoruz</div><div class="ms-desc">Ve sizleri bu mutluluğa ortak olmaya davet ediyoruz.</div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -271,25 +271,18 @@
               </div>
             </div>
 
-            <div class="rsvp-two">
-              <label class="field">
-                <span class="field-label">Kişi Sayısı</span>
+            <label class="field">
+              <span class="field-label">Kişi Sayısı</span>
+              <span class="select-wrap">
                 <select class="field-input" name="guests">
                   <option value="1">1 kişi</option>
                   <option value="2">2 kişi</option>
                   <option value="3">3 kişi</option>
+                  <option value="4">4 kişi</option>
                 </select>
-              </label>
-              <label class="field">
-                <span class="field-label">Menü Tercihi</span>
-                <select class="field-input" name="menu">
-                  <option value="" disabled selected>Seçiniz</option>
-                  <option>Et</option>
-                  <option>Tavuk</option>
-                  <option>Vejetaryen</option>
-                </select>
-              </label>
-            </div>
+                <span class="select-chevron icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg></span>
+              </span>
+            </label>
 
             <label class="field">
               <span class="field-label">Notunuz</span>

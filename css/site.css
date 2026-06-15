@@ -329,8 +329,19 @@ img { display: block; }
   transition: border-color var(--dur) var(--ease-soft), box-shadow var(--dur) var(--ease-soft);
 }
 textarea.field-input { resize: vertical; }
-select.field-input { appearance: none; color: var(--text-primary); cursor: pointer; }
 .field-input:focus { border-color: var(--accent); box-shadow: var(--ring-focus); }
+
+/* Select — custom chevron so it clearly reads as a dropdown */
+.select-wrap { position: relative; display: block; }
+.select-wrap select.field-input {
+  appearance: none; -webkit-appearance: none; -moz-appearance: none;
+  color: var(--text-primary); cursor: pointer; padding-right: 44px;
+}
+.select-wrap select.field-input::-ms-expand { display: none; }
+.select-chevron {
+  position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+  width: 18px; height: 18px; color: var(--clay-500); pointer-events: none;
+}
 
 .choice-group { display: flex; gap: 26px; flex-wrap: wrap; }
 .radio {
