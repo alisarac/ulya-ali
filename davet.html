@@ -14,7 +14,7 @@
   /* Responsive portrait invitation — fills the screen on mobile, a centred
      card on desktop; real clamp() type so it reads on a phone. */
   .inv {
-    position: relative; overflow: hidden; min-height: 100vh;
+    position: relative; overflow: hidden;
     width: 100%; max-width: 600px; margin: 0 auto;
     background: #F2E8DF; box-shadow: var(--shadow-lg);
     display: flex; flex-direction: column;
@@ -31,8 +31,8 @@
   }
   .inv-kilim.l { left: 0; } .inv-kilim.r { right: 0; transform: scaleX(-1); }
   .inv-botan {
-    position: absolute; bottom: clamp(120px, 20vh, 240px); height: clamp(260px, 44%, 560px);
-    opacity: 0.95; z-index: 1;
+    position: absolute; bottom: clamp(56px, 11vh, 130px); height: clamp(300px, 50%, 640px);
+    opacity: 0.95; z-index: 5;
     -webkit-mask-image: radial-gradient(128% 118% at 42% 56%, #000 70%, transparent 100%);
     mask-image: radial-gradient(128% 118% at 42% 56%, #000 70%, transparent 100%);
   }
@@ -45,7 +45,7 @@
 
   /* Content */
   .inv-content {
-    position: relative; z-index: 2; flex: 1 0 auto;
+    position: relative; z-index: 2; flex: 0 0 auto;
     width: 100%; max-width: 640px; margin: 0 auto;
     padding: clamp(40px, 9vw, 88px) clamp(28px, 7vw, 64px) clamp(36px, 7vw, 64px);
     display: flex; flex-direction: column; align-items: center; text-align: center;
@@ -107,7 +107,7 @@
   /* Bottom band — arched frame + panorama + sign-offs, as in the source.
      Sits flush across the card so the arc lines up with the edges. */
   .inv-band {
-    position: relative; z-index: 4; flex: 0 0 auto; width: 100%; display: block; margin-top: auto;
+    position: relative; z-index: 4; flex: 0 0 auto; width: 100%; display: block; margin-top: 0;
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 9%);
     mask-image: linear-gradient(to bottom, transparent, #000 9%);
   }
