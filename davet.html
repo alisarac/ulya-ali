@@ -95,10 +95,19 @@
   /* Bottom band — arched frame + panorama + sign-offs, as in the source.
      Sits flush across the card so the arc lines up with the edges. */
   .inv-band {
-    position: relative; z-index: 1; flex: 0 0 auto; width: 100%; display: block; margin-top: 0;
+    position: relative; z-index: 1; flex: 0 0 auto; width: 100%; margin-top: 0;
+  }
+  .inv-band-img {
+    display: block; width: 100%;
     -webkit-mask-image: linear-gradient(to bottom, transparent, #000 9%);
     mask-image: linear-gradient(to bottom, transparent, #000 9%);
   }
+  /* Larger heart overlaid where the baked one + text were removed */
+  .inv-band-heart {
+    position: absolute; top: 4%; left: 50%; transform: translateX(-50%);
+    width: clamp(24px, 5.5%, 38px); height: auto; color: var(--clay-500); line-height: 0;
+  }
+  .inv-band-heart svg { width: 100%; height: 100%; display: block; }
 
   @media print {
     @page { margin: 10mm; }
@@ -139,7 +148,10 @@
     <p class="note">Akşamımızın geç saatlere uzayacağını düşünerek, bu özel günümüzde miniklerimize <strong>İyi Geceler Diliyoruz.</strong></p>
   </div>
 
-  <img class="inv-band" src="assets/bottom-band.png" alt="" aria-hidden="true" />
+  <div class="inv-band">
+    <img class="inv-band-img" src="assets/band-clean.png" alt="" aria-hidden="true" />
+    <span class="inv-band-heart" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5l7 7Z"/></svg></span>
+  </div>
 </div>
 </body>
 </html>
