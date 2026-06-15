@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="css/styles.css" />
 <style>
   html, body { margin: 0; background: #E7DCC8; }
-  body { height: 100vh; display: flex; align-items: center; justify-content: center; overflow: hidden; }
   * { box-sizing: border-box; }
   img { display: block; }
 
@@ -16,10 +15,9 @@
      card on desktop; real clamp() type so it reads on a phone. */
   .inv {
     position: relative; overflow: hidden;
-    width: 100%; max-width: 600px; margin: 0 auto; flex: 0 0 auto;
+    width: 100%; max-width: 600px; margin: clamp(0px, 4vw, 32px) auto;
     background: #F2E8DF; box-shadow: var(--shadow-lg);
     display: flex; flex-direction: column;
-    transform-origin: center center;
   }
 
   /* Side kilim + lower botanicals, feathered */
@@ -163,23 +161,5 @@
     </span>
   </div>
 </div>
-<script>
-  /* Scale the invitation to fit the viewport so the whole card — incl. the
-     bottom band — is always visible without scrolling (downscale only). */
-  (function () {
-    var inv = document.querySelector('.inv');
-    function fit() {
-      inv.style.transform = 'none';
-      var cw = inv.offsetWidth, ch = inv.offsetHeight;
-      var pad = window.innerWidth > 600 ? 28 : 0;
-      var s = Math.min((window.innerWidth - pad * 2) / cw, (window.innerHeight - pad * 2) / ch, 1);
-      inv.style.transform = 'scale(' + s + ')';
-    }
-    ['resize', 'orientationchange'].forEach(function (e) { window.addEventListener(e, fit); });
-    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(fit); }
-    window.addEventListener('load', fit);
-    fit();
-  })();
-</script>
 </body>
 </html>
