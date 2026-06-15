@@ -293,6 +293,7 @@ img { display: block; }
   font-family: var(--font-display); font-size: 20px; color: var(--text-primary);
   display: block; font-weight: 500;
 }
+.venue-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ── Gallery ──────────────────────────────────────────── */
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
