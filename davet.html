@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/styles.css" />
 <style>
   html, body { margin: 0; background: #E7DCC8; }
+  body { padding-bottom: 40px; }
   * { box-sizing: border-box; }
   img { display: block; }
 
@@ -97,7 +98,7 @@
   /* Bottom band — arched frame + panorama + sign-offs, as in the source.
      Sits flush across the card so the arc lines up with the edges. */
   .inv-band {
-    position: relative; z-index: 1; flex: 0 0 auto; width: 100%; margin-top: 0;
+    position: relative; z-index: 4; flex: 0 0 auto; width: 100%; margin-top: 0;
   }
   .inv-band-img {
     display: block; width: 100%;
@@ -106,7 +107,7 @@
   }
   /* Heart-and-rule divider (———♥———), enlarged, where the baked one was */
   .inv-band-rule {
-    position: absolute; top: 4.5%; left: 50%; transform: translateX(-50%);
+    position: absolute; top: calc(4.5% - 20px); left: 50%; transform: translateX(-50%);
     display: flex; align-items: center; justify-content: center;
     gap: clamp(10px, 2.4%, 18px); width: clamp(190px, 46%, 300px); color: var(--clay-500);
   }
