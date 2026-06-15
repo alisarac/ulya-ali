@@ -259,6 +259,7 @@ img { display: block; }
 .detail-tile .dt-lines {
   font-family: var(--font-ui); font-size: 14px; color: var(--text-muted); line-height: 1.5;
 }
+.detail-tile .dt-action { margin-top: 6px; }
 
 .details-cols {
   display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 56px);
@@ -293,7 +294,6 @@ img { display: block; }
   font-family: var(--font-display); font-size: 20px; color: var(--text-primary);
   display: block; font-weight: 500;
 }
-.venue-actions { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ── Gallery ──────────────────────────────────────────── */
 .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
