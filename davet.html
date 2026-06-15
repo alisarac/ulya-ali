@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ulya & Ali — Davetiye</title>
+<meta name="description" content="Ulya ve Ali'nin düğününe davetlisiniz — 25 Temmuz 2026, Güzelcehisar Garden, Otağtepe, İstanbul." />
+<link rel="stylesheet" href="css/styles.css" />
+<style>
+  html, body { margin: 0; background: #F2E8DF; }
+  * { box-sizing: border-box; }
+  img { display: block; }
+
+  /* Full-page responsive invitation — single flowing column, real type
+     sizes (clamp) so it reads on a phone; ornaments feather into the paper. */
+  .inv {
+    position: relative; overflow: hidden; min-height: 100vh;
+    background: #F2E8DF;
+    display: flex; flex-direction: column;
+  }
+
+  /* Side kilim + lower botanicals, feathered */
+  .inv-kilim {
+    position: absolute; top: clamp(40px, 8vw, 96px); height: clamp(220px, 38%, 460px);
+    opacity: 0.9; z-index: 1;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 88%, transparent), linear-gradient(to right, transparent, #000 24%, #000 80%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image: linear-gradient(to bottom, transparent, #000 10%, #000 88%, transparent), linear-gradient(to right, transparent, #000 24%, #000 80%, transparent);
+    mask-composite: intersect;
+  }
+  .inv-kilim.l { left: 0; } .inv-kilim.r { right: 0; transform: scaleX(-1); }
+  .inv-botan {
+    position: absolute; bottom: clamp(150px, 26vh, 320px); height: clamp(200px, 34%, 460px);
+    opacity: 0.45; z-index: 1;
+    -webkit-mask-image: radial-gradient(120% 100% at 38% 56%, #000 40%, transparent 80%);
+    mask-image: radial-gradient(120% 100% at 38% 56%, #000 40%, transparent 80%);
+  }
+  .inv-botan.l { left: -12px; } .inv-botan.r { right: -12px; transform: scaleX(-1); }
+
+  /* Content */
+  .inv-content {
+    position: relative; z-index: 2; flex: 1 0 auto;
+    width: 100%; max-width: 640px; margin: 0 auto;
+    padding: clamp(40px, 9vw, 88px) clamp(24px, 6vw, 56px) clamp(36px, 7vw, 64px);
+    display: flex; flex-direction: column; align-items: center; text-align: center;
+  }
+  /* Soft paper halo so ornaments never fight the words */
+  .inv-content::before {
+    content: ""; position: absolute; inset: 4% 0; z-index: -1;
+    background: radial-gradient(62% 54% at 50% 46%, #F2E8DF 0%, rgba(242,232,223,0.82) 46%, rgba(242,232,223,0) 78%);
+  }
+
+  .eyebrow {
+    font-family: var(--font-label); font-weight: 500;
+    font-size: clamp(11px, 2.7vw, 14px); letter-spacing: .2em; text-transform: uppercase;
+    color: var(--olive-700); line-height: 1.7; margin: 0;
+  }
+  .intro {
+    font-family: var(--font-body); font-style: italic;
+    font-size: clamp(16px, 3.6vw, 19px); color: var(--text-secondary);
+    line-height: 1.55; margin: clamp(12px, 3vw, 18px) 0 0; max-width: 30em;
+  }
+  .med { width: clamp(96px, 22vw, 140px); height: auto; margin: clamp(18px, 4vw, 28px) 0 clamp(6px, 2vw, 12px); }
+  .name {
+    font-family: var(--font-display); font-weight: 500;
+    font-size: clamp(2.8rem, 13vw, 5rem); letter-spacing: .24em;
+    color: var(--olive-700); line-height: 1.02; margin: 0 0 0 .24em;
+  }
+  .ve {
+    font-family: var(--font-script); font-size: clamp(1.7rem, 7vw, 2.6rem);
+    color: var(--clay-500); line-height: 1; margin: clamp(2px, 1vw, 6px) 0; position: relative;
+  }
+  .ve::before, .ve::after { content: ""; position: absolute; top: 54%; width: clamp(28px, 7vw, 48px); height: 1px; background: var(--clay-400); }
+  .ve::before { right: 100%; margin-right: clamp(10px, 3vw, 16px); }
+  .ve::after { left: 100%; margin-left: clamp(10px, 3vw, 16px); }
+  .tulip { width: clamp(36px, 9vw, 52px); height: auto; margin: clamp(20px, 5vw, 30px) 0 clamp(18px, 4vw, 26px); }
+
+  .details {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    width: 100%; max-width: 460px; margin: 0 auto;
+  }
+  .det { padding: 0 clamp(8px, 2.4vw, 16px); display: flex; flex-direction: column; align-items: center; gap: clamp(5px, 1.4vw, 8px); }
+  .det + .det { border-left: 1px solid var(--clay-300); }
+  .det svg { width: clamp(22px, 5.6vw, 28px); height: clamp(22px, 5.6vw, 28px); color: var(--clay-500); }
+  .det .big { font-family: var(--font-display); font-size: clamp(1.5rem, 6vw, 1.95rem); font-weight: 500; color: var(--olive-700); line-height: 1; }
+  .det .lab { font-family: var(--font-label); font-size: clamp(10px, 2.6vw, 12.5px); font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--clay-600); line-height: 1.3; }
+  .det .sub { font-family: var(--font-label); font-size: clamp(9.5px, 2.4vw, 11.5px); letter-spacing: .03em; color: var(--text-muted); line-height: 1.45; }
+
+  .rule { width: clamp(200px, 50vw, 280px); height: auto; margin: clamp(26px, 6vw, 40px) 0 clamp(16px, 4vw, 24px); }
+  .note {
+    font-family: var(--font-body); font-style: italic;
+    font-size: clamp(15px, 3.4vw, 18px); color: var(--text-secondary);
+    line-height: 1.55; margin: 0; max-width: 34em;
+  }
+  .note strong {
+    font-family: var(--font-label); font-style: normal; font-weight: 500;
+    font-size: clamp(12px, 3vw, 14px); letter-spacing: .16em; text-transform: uppercase;
+    color: var(--olive-700); display: block; margin-top: clamp(8px, 2vw, 12px);
+  }
+  .closing {
+    font-family: var(--font-display); font-style: italic;
+    font-size: clamp(18px, 4.4vw, 24px); color: var(--text-secondary);
+    margin: clamp(28px, 6vw, 44px) 0 0;
+  }
+
+  /* Footer scene — single clean panorama, feathered into the page */
+  .inv-scene {
+    position: relative; z-index: 2; flex: 0 0 auto;
+    width: 100%; max-height: 38vh; object-fit: cover; object-position: center 70%;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 100%);
+    mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 100%);
+  }
+
+  @media print {
+    @page { margin: 12mm; }
+    html, body { background: #fff; }
+    .inv { min-height: auto; }
+    .inv-scene { max-height: 70mm; }
+  }
+</style>
+</head>
+<body>
+<div class="inv">
+  <img class="inv-kilim l" src="assets/kilim-left.png" alt="" aria-hidden="true" />
+  <img class="inv-kilim r" src="assets/kilim-left.png" alt="" aria-hidden="true" />
+  <img class="inv-botan l" src="assets/botanical-left.png" alt="" aria-hidden="true" />
+  <img class="inv-botan r" src="assets/botanical-left.png" alt="" aria-hidden="true" />
+
+  <div class="inv-content">
+    <p class="eyebrow">Birbirimizi Bulduk,<br/>Ailelerimizle Bütünlendik.</p>
+    <p class="intro">Bu özel günümüzde sizleri de aramızda görmekten mutluluk duyarız.</p>
+    <img class="med" src="assets/divider.png" alt="" aria-hidden="true" />
+    <h1 class="name">ULYA</h1>
+    <span class="ve">ve</span>
+    <h1 class="name">ALİ</h1>
+    <img class="tulip" src="assets/tulip.png" alt="" aria-hidden="true" />
+
+    <div class="details">
+      <div class="det">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        <span class="big">25</span><span class="lab">Temmuz</span><span class="sub">2026<br/>Cumartesi</span>
+      </div>
+      <div class="det">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span class="big">19.00</span><span class="lab">Nikah & Davet</span>
+      </div>
+      <div class="det">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span class="lab">Güzelcehisar<br/>Garden</span><span class="sub">Otağtepe, Kavacık<br/>İstanbul</span>
+      </div>
+    </div>
+
+    <img class="rule" src="assets/divider.png" alt="" aria-hidden="true" />
+    <p class="note">Akşamımızın geç saatlere uzayacağını düşünerek, bu özel günümüzde miniklerimize <strong>İyi Geceler Diliyoruz.</strong></p>
+    <p class="closing">Sevgilerle bekliyoruz</p>
+  </div>
+
+  <img class="inv-scene" src="assets/landscape.png" alt="" aria-hidden="true" />
+</div>
+</body>
+</html>
