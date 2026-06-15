@@ -7,15 +7,16 @@
 <meta name="description" content="Ulya ve Ali'nin düğününe davetlisiniz — 25 Temmuz 2026, Güzelcehisar Garden, Otağtepe, İstanbul." />
 <link rel="stylesheet" href="css/styles.css" />
 <style>
-  html, body { margin: 0; background: #F2E8DF; }
+  html, body { margin: 0; background: #E7DCC8; }
   * { box-sizing: border-box; }
   img { display: block; }
 
-  /* Full-page responsive invitation — single flowing column, real type
-     sizes (clamp) so it reads on a phone; ornaments feather into the paper. */
+  /* Responsive portrait invitation — fills the screen on mobile, a centred
+     card on desktop; real clamp() type so it reads on a phone. */
   .inv {
     position: relative; overflow: hidden; min-height: 100vh;
-    background: #F2E8DF;
+    width: 100%; max-width: 600px; margin: 0 auto;
+    background: #F2E8DF; box-shadow: var(--shadow-lg);
     display: flex; flex-direction: column;
   }
 
@@ -30,12 +31,12 @@
   }
   .inv-kilim.l { left: 0; } .inv-kilim.r { right: 0; transform: scaleX(-1); }
   .inv-botan {
-    position: absolute; bottom: clamp(150px, 26vh, 320px); height: clamp(200px, 34%, 460px);
-    opacity: 0.45; z-index: 1;
-    -webkit-mask-image: radial-gradient(120% 100% at 38% 56%, #000 40%, transparent 80%);
-    mask-image: radial-gradient(120% 100% at 38% 56%, #000 40%, transparent 80%);
+    position: absolute; bottom: clamp(120px, 20vh, 240px); height: clamp(260px, 44%, 560px);
+    opacity: 0.95; z-index: 1;
+    -webkit-mask-image: radial-gradient(128% 118% at 42% 56%, #000 70%, transparent 100%);
+    mask-image: radial-gradient(128% 118% at 42% 56%, #000 70%, transparent 100%);
   }
-  .inv-botan.l { left: -12px; } .inv-botan.r { right: -12px; transform: scaleX(-1); }
+  .inv-botan.l { left: -10px; } .inv-botan.r { right: -10px; transform: scaleX(-1); }
 
   /* Content */
   .inv-content {
@@ -98,25 +99,18 @@
     font-size: clamp(12px, 3vw, 14px); letter-spacing: .16em; text-transform: uppercase;
     color: var(--olive-700); display: block; margin-top: clamp(8px, 2vw, 12px);
   }
-  .closing {
-    font-family: var(--font-display); font-style: italic;
-    font-size: clamp(18px, 4.4vw, 24px); color: var(--text-secondary);
-    margin: clamp(28px, 6vw, 44px) 0 0;
-  }
-
-  /* Footer scene — single clean panorama, feathered into the page */
-  .inv-scene {
-    position: relative; z-index: 2; flex: 0 0 auto;
-    width: 100%; max-height: 38vh; object-fit: cover; object-position: center 70%;
-    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 100%);
-    mask-image: linear-gradient(to bottom, transparent, #000 22%, #000 100%);
+  /* Bottom band — arched frame + panorama + sign-offs, as in the source.
+     Sits flush across the card so the arc lines up with the edges. */
+  .inv-band {
+    position: relative; z-index: 4; flex: 0 0 auto; width: 100%; display: block; margin-top: auto;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, #000 9%);
+    mask-image: linear-gradient(to bottom, transparent, #000 9%);
   }
 
   @media print {
-    @page { margin: 12mm; }
+    @page { margin: 10mm; }
     html, body { background: #fff; }
-    .inv { min-height: auto; }
-    .inv-scene { max-height: 70mm; }
+    .inv { min-height: auto; max-width: 100%; box-shadow: none; }
   }
 </style>
 </head>
@@ -153,10 +147,9 @@
 
     <img class="rule" src="assets/divider.png" alt="" aria-hidden="true" />
     <p class="note">Akşamımızın geç saatlere uzayacağını düşünerek, bu özel günümüzde miniklerimize <strong>İyi Geceler Diliyoruz.</strong></p>
-    <p class="closing">Sevgilerle bekliyoruz</p>
   </div>
 
-  <img class="inv-scene" src="assets/landscape.png" alt="" aria-hidden="true" />
+  <img class="inv-band" src="assets/bottom-band.png" alt="" aria-hidden="true" />
 </div>
 </body>
 </html>
