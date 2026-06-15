@@ -41,7 +41,7 @@
   .inv-content {
     position: relative; z-index: 2; flex: 1 0 auto;
     width: 100%; max-width: 640px; margin: 0 auto;
-    padding: clamp(40px, 9vw, 88px) clamp(40px, 12vw, 76px) clamp(36px, 7vw, 64px);
+    padding: clamp(40px, 9vw, 88px) clamp(28px, 7vw, 64px) clamp(36px, 7vw, 64px);
     display: flex; flex-direction: column; align-items: center; text-align: center;
   }
   /* Soft paper halo so ornaments never fight the words */
@@ -58,7 +58,8 @@
   .intro {
     font-family: var(--font-body); font-style: italic;
     font-size: clamp(16px, 3.6vw, 19px); color: var(--text-secondary);
-    line-height: 1.55; margin: clamp(12px, 3vw, 18px) 0 0; max-width: 30em;
+    line-height: 1.55; margin: clamp(12px, 3vw, 18px) 0 0; max-width: 22em;
+    text-wrap: balance;
   }
   .med { width: clamp(96px, 22vw, 140px); height: auto; margin: clamp(18px, 4vw, 28px) 0 clamp(6px, 2vw, 12px); }
   .name {
