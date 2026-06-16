@@ -382,14 +382,6 @@ textarea.field-input { resize: vertical; }
 }
 .is-hidden { display: none !important; }
 
-/* ── Closing scene (watercolor panorama above the footer) ── */
-.closing-scene { background: var(--bg-page); line-height: 0; }
-.closing-scene img {
-  display: block; width: 100%; max-height: 300px; object-fit: cover; object-position: center 72%;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 32%);
-  mask-image: linear-gradient(to bottom, transparent, #000 32%);
-}
-
 /* ── Footer ───────────────────────────────────────────── */
 .footer {
   background: var(--olive-700); color: var(--text-on-olive);
