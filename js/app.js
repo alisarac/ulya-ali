@@ -56,7 +56,7 @@
   /* ── RSVP: POST to the Google Apps Script Web App, then thank-you ──
      Paste the deployed Web App URL (…/exec) below. While it's empty the
      form just shows the thank-you state without saving. */
-  var RSVP_ENDPOINT = '';
+  var RSVP_ENDPOINT = 'https://script.google.com/macros/s/AKfycbyhvp-3k3sWfiUD3_ngXNjeIhdqDPwwM5zpn4-W2MXkv-6yIXdlHLw0Um6-3AlMgnkNxw/exec';
 
   var form = document.querySelector('.rsvp-form');
   var thanks = document.querySelector('.rsvp-thanks');
