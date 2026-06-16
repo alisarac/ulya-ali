@@ -286,6 +286,8 @@ img { display: block; }
   font-family: var(--font-display); font-size: 20px; color: var(--text-primary);
   display: block; font-weight: 500;
 }
+.venue { max-width: 520px; margin: clamp(40px, 6vw, 64px) auto 0; text-align: center; }
+.venue .venue-text { text-align: center; }
 
 /* Kindly-worded note (e.g. adults-only) below the details */
 .kids-note {
