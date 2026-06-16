@@ -53,15 +53,31 @@
     setInterval(tick, 1000);
   }
 
-  /* ── RSVP: submit → thank-you state (front-end only) ── */
+  /* ── RSVP: POST to the Google Apps Script Web App, then thank-you ──
+     Paste the deployed Web App URL (…/exec) below. While it's empty the
+     form just shows the thank-you state without saving. */
+  var RSVP_ENDPOINT = '';
+
   var form = document.querySelector('.rsvp-form');
   var thanks = document.querySelector('.rsvp-thanks');
   if (form && thanks) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
+    var showThanks = function () {
       form.classList.add('is-hidden');
       thanks.classList.remove('is-hidden');
       scrollToId('rsvp');
+    };
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      if (btn) { btn.disabled = true; btn.textContent = 'Gönderiliyor…'; }
+      if (RSVP_ENDPOINT) {
+        /* no-cors: Apps Script doesn't send CORS headers; we fire-and-forget
+           (opaque response) and show thanks on success or network error. */
+        fetch(RSVP_ENDPOINT, { method: 'POST', mode: 'no-cors', body: new FormData(form) })
+          .then(showThanks, showThanks);
+      } else {
+        showThanks();
+      }
     });
   }
 })();
