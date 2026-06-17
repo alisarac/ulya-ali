@@ -1,7 +1,6 @@
 /* Otağ — Ulya & Ali · simple i18n for a static site.
-   TR (default) · RU · KY (Kyrgyz, Cyrillic) · UZ (Uzbek, Latin).
-   Strings are marked in HTML with data-i18n / data-i18n-ph / data-i18n-aria.
-   NOTE: RU/KY/UZ wording should be proofread by a native speaker. */
+   TR (default) · RU (Russian).
+   Strings are marked in HTML with data-i18n / data-i18n-ph / data-i18n-aria. */
 (function () {
   'use strict';
 
@@ -63,9 +62,9 @@
       'tile.wedding': 'Свадьба',
       'tile.evening': 'вечер',
       'detail.directions': 'Как добраться',
-      'kids.script': 'деликатно',
+      'kids.script': 'с заботой',
       'kids.note': 'Поскольку наш вечер продлится допоздна, в этот особенный день мы желаем нашим маленьким гостям спокойной ночи.',
-      'venue.title': 'Место',
+      'venue.title': 'Место проведения',
       'venue.map': 'Открыть на карте',
       'rsvp.script': 'пожалуйста',
       'rsvp.eyebrow': 'RSVP',
@@ -87,88 +86,6 @@
       'footer.tag': 'Ждём вас с любовью',
       'footer.meta': 'Ulya & Ali · 25 июля 2026 · Стамбул',
       'doc.title': 'Ulya & Ali — Свадьба · 25 июля 2026'
-    },
-    ky: {
-      'connector': 'жана',
-      'nav.brandAria': 'Башына',
-      'nav.details': 'Маалымат',
-      'nav.invitation': 'Чакыруу',
-      'nav.rsvp': 'RSVP',
-      'hero.eyebrow': 'Тоюбузга чакырабыз',
-      'hero.date': '25-июль 2026 · Стамбул',
-      'cd.days': 'Күн', 'cd.hours': 'Саат', 'cd.mins': 'Мүнөт', 'cd.secs': 'Секунд',
-      'details.eyebrow': 'Той тууралуу',
-      'details.title': 'Сиздерди күтөбүз',
-      'tile.month': 'июль 2026',
-      'tile.saturday': 'ишемби',
-      'tile.wedding': 'Той',
-      'tile.evening': 'кеч',
-      'detail.directions': 'Кантип жетем',
-      'kids.script': 'сылыктык',
-      'kids.note': 'Кечибиз кечке созулаарын эске алып, бул өзгөчө күнүбүздө кичинекей конокторубузга жакшы түн каалайбыз.',
-      'venue.title': 'Той жайы',
-      'venue.map': 'Картадан ачуу',
-      'rsvp.script': 'өтүнүч',
-      'rsvp.eyebrow': 'RSVP',
-      'rsvp.title': 'Катышасызбы?',
-      'field.name': 'Аты-жөнү',
-      'field.name.ph': 'Атыңыз жана фамилияңыз',
-      'field.att': 'Катышуу',
-      'att.yes': 'Катышам',
-      'att.no': 'Тилекке каршы, катыша албайм',
-      'field.guests': 'Кишилер саны',
-      'guests.1': '1 киши', 'guests.2': '2 киши', 'guests.3': '3 киши', 'guests.4': '4 киши',
-      'field.note': 'Эскертүү',
-      'field.note.ph': 'Аллергия же өзгөчө каалоолоруңуз (милдеттүү эмес)',
-      'rsvp.submit': 'Жоопту жөнөтүү',
-      'rsvp.sending': 'Жөнөтүлүүдө…',
-      'thanks.title': 'Рахмат!',
-      'thanks.body': 'Жообуңуз бизге жетти. Сиздерди бул өзгөчө күнүбүздө араңыздан көрүүгө чыдамсыздык менен күтөбүз.',
-      'thanks.script': 'Сүйүү менен',
-      'footer.tag': 'Сүйүү менен күтөбүз',
-      'footer.meta': 'Ulya & Ali · 25-июль 2026 · Стамбул',
-      'doc.title': 'Ulya & Ali — Той · 25-июль 2026'
-    },
-    uz: {
-      'connector': 'va',
-      'nav.brandAria': 'Boshiga',
-      'nav.details': 'Tafsilotlar',
-      'nav.invitation': 'Taklifnoma',
-      'nav.rsvp': 'RSVP',
-      'hero.eyebrow': 'Toʻyimizga taklif qilamiz',
-      'hero.date': '25-iyul 2026 · Istanbul',
-      'cd.days': 'Kun', 'cd.hours': 'Soat', 'cd.mins': 'Daqiqa', 'cd.secs': 'Soniya',
-      'details.eyebrow': 'Toʻy tafsilotlari',
-      'details.title': 'Sizni kutamiz',
-      'tile.month': 'iyul 2026',
-      'tile.saturday': 'shanba',
-      'tile.wedding': 'Toʻy',
-      'tile.evening': 'kechqurun',
-      'detail.directions': 'Qanday boriladi',
-      'kids.script': 'nazokat ila',
-      'kids.note': 'Kechamiz kech tungacha davom etishini hisobga olib, bu alohida kunimizda kichkintoylarimizga xayrli tun tilaymiz.',
-      'venue.title': 'Manzil',
-      'venue.map': 'Xaritada ochish',
-      'rsvp.script': 'iltimos',
-      'rsvp.eyebrow': 'RSVP',
-      'rsvp.title': 'Qatnashasizmi?',
-      'field.name': 'Ism familiya',
-      'field.name.ph': 'Ismingiz va familiyangiz',
-      'field.att': 'Ishtirok',
-      'att.yes': 'Qatnashaman',
-      'att.no': 'Afsuski, qatnasha olmayman',
-      'field.guests': 'Mehmonlar soni',
-      'guests.1': '1 kishi', 'guests.2': '2 kishi', 'guests.3': '3 kishi', 'guests.4': '4 kishi',
-      'field.note': 'Izoh',
-      'field.note.ph': 'Allergiya yoki maxsus istaklaringiz (ixtiyoriy)',
-      'rsvp.submit': 'Javobni yuborish',
-      'rsvp.sending': 'Yuborilmoqda…',
-      'thanks.title': 'Rahmat!',
-      'thanks.body': 'Javobingiz bizga yetib keldi. Sizni bu alohida kunimizda koʻrishni intizorlik bilan kutamiz.',
-      'thanks.script': 'Mehr bilan',
-      'footer.tag': 'Mehr bilan kutamiz',
-      'footer.meta': 'Ulya & Ali · 25-iyul 2026 · Istanbul',
-      'doc.title': 'Ulya & Ali — Toʻy · 25-iyul 2026'
     }
   };
 
@@ -197,8 +114,9 @@
     if (submit && dict['rsvp.sending']) { submit.setAttribute('data-sending', dict['rsvp.sending']); }
 
     document.querySelectorAll('.lang-btn').forEach(function (b) {
-      b.classList.toggle('is-active', b.getAttribute('data-lang') === lang);
-      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+      var active = b.getAttribute('data-lang') === lang;
+      b.classList.toggle('is-active', active);
+      b.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
     try { localStorage.setItem('ua_lang', lang); } catch (e) {}
