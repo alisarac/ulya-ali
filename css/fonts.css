@@ -6,7 +6,9 @@
      · Pinyon Script      → cursive calligraphic accent ("ve", flourishes)
      · Jost               → geometric sans for tracked labels & UI
      · Golos Text         → Cyrillic fallback for Russian copy
-   All cover Latin + Latin-Extended (Turkish). Jost lacks Cyrillic,
-   so Golos Text follows it in the stack for per-glyph fallback.
+     · PT Serif           → Cyrillic-capable serif fallback (RU/KY headings & body)
+   Latin + Latin-Extended (Turkish) covered by Cormorant/Jost; Cyrillic
+   (Russian, Kyrgyz) by Golos Text (sans) + PT Serif (serif). Uzbek uses
+   Latin script. Per-glyph fallback handles mixed scripts.
    ───────────────────────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Pinyon+Script&family=Jost:wght@300;400;500;600&family=Golos+Text:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Pinyon+Script&family=Jost:wght@300;400;500;600&family=Golos+Text:wght@400;500;600&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');

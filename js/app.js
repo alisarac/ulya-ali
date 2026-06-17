@@ -69,7 +69,7 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var btn = form.querySelector('button[type="submit"]');
-      if (btn) { btn.disabled = true; btn.textContent = 'Gönderiliyor…'; }
+      if (btn) { btn.disabled = true; btn.textContent = btn.getAttribute('data-sending') || 'Gönderiliyor…'; }
       if (RSVP_ENDPOINT) {
         /* no-cors: Apps Script doesn't send CORS headers; we fire-and-forget
            (opaque response) and show thanks on success or network error. */

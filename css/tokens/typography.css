@@ -7,7 +7,7 @@
   /* Families */
   --font-display: 'Cormorant Garamond', 'PT Serif', Georgia, serif;
   --font-serif:   'Cormorant Garamond', 'PT Serif', Georgia, serif;
-  --font-script:  'Pinyon Script', 'Cormorant Garamond', cursive;
+  --font-script:  'Pinyon Script', 'Cormorant Garamond', 'PT Serif', serif;
   --font-label:   'Jost', 'Golos Text', system-ui, sans-serif;
   --font-body:    'Cormorant Garamond', 'PT Serif', Georgia, serif;
   --font-ui:      'Jost', 'Golos Text', system-ui, sans-serif;

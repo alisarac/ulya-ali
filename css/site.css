@@ -102,7 +102,21 @@ img { display: block; }
   border-bottom: 1px solid var(--border-soft);
 }
 .nav-brand { background: none; border: none; cursor: pointer; padding: 0; }
+.nav-right { display: flex; align-items: center; gap: clamp(12px, 2.2vw, 26px); }
 .nav-links { display: flex; align-items: center; gap: clamp(14px, 2.4vw, 34px); }
+/* Language switch */
+.lang-switch {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding-left: clamp(10px, 1.6vw, 18px); border-left: 1px solid var(--border-soft);
+}
+.lang-btn {
+  background: none; border: none; cursor: pointer; padding: 2px 1px;
+  font-family: var(--font-label); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.1em; color: var(--text-faint);
+  transition: color var(--dur) var(--ease-soft);
+}
+.lang-btn:hover { color: var(--text-secondary); }
+.lang-btn.is-active { color: var(--accent); }
 .nav-link {
   background: none; border: none; cursor: pointer; padding: 0;
   font-family: var(--font-label); font-size: 12.5px; font-weight: 500;
@@ -407,11 +421,14 @@ textarea.field-input { resize: vertical; }
   .hero-kilim { height: 34%; opacity: 0.5; }
 }
 @media (max-width: 560px) {
-  /* Nav: drop the brand mark, shrink + center the links so they fit. */
-  .nav { padding: 0 12px; }
+  /* Nav: drop the brand mark, shrink + center the links + lang switch. */
+  .nav { padding: 0 10px; justify-content: center; }
   .nav-brand { display: none; }
-  .nav-links { gap: 9px; width: 100%; justify-content: center; }
-  .nav-link { font-size: 10px; letter-spacing: 0.05em; }
+  .nav-right { gap: 9px; flex-wrap: wrap; justify-content: center; }
+  .nav-links { gap: 9px; }
+  .nav-link { font-size: 10px; letter-spacing: 0.04em; }
+  .lang-switch { gap: 6px; padding-left: 9px; }
+  .lang-btn { font-size: 10px; letter-spacing: 0.02em; }
   /* Keep the hero column within the screen so nothing drags off-edge. */
   .hero-inner { padding: 32px 14px; max-width: 100%; }
   /* Countdown shrinks to fit four cells across a phone. */
